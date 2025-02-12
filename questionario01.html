@@ -85,61 +85,16 @@
     </div>
     <script>
         const questions = [
-            {
-                question: "O que é o ChatGPT?",
-                options: [
-                    "Uma ferramenta de inteligência artificial para responder perguntas e ajudar em várias tarefas.",
-                    "Um site de redes sociais.",
-                    "Um aplicativo para assistir vídeos.",
-                    "Um novo modelo de smartphone."
-                ],
-                answer: 0,
-                explanation: "O ChatGPT é uma inteligência artificial desenvolvida para responder perguntas e auxiliar em diversas tarefas."
-            },
-            {
-                question: "O que é um Firewall?",
-                options: [
-                    "Um sistema de segurança que protege contra acessos não autorizados.",
-                    "Um tipo de navegador de internet.",
-                    "Uma senha para acessar redes Wi-Fi.",
-                    "Um programa para editar fotos."
-                ],
-                answer: 0,
-                explanation: "Um firewall ajuda a proteger seu computador contra acessos não autorizados e ameaças da internet."
-            },
-            {
-                question: "O que significa VPN?",
-                options: [
-                    "Uma rede privada virtual que aumenta a segurança online.",
-                    "Um novo modelo de processador para computadores.",
-                    "Um tipo de conexão Bluetooth.",
-                    "Um aplicativo para enviar mensagens."
-                ],
-                answer: 0,
-                explanation: "VPN significa Rede Privada Virtual, que ajuda a criar uma conexão segura na internet."
-            },
-            {
-                question: "O que é um QR Code?",
-                options: [
-                    "Um código de barras bidimensional que pode ser escaneado por smartphones.",
-                    "Um novo tipo de processador para celulares.",
-                    "Um formato de arquivo de vídeo.",
-                    "Um programa de computador para editar imagens."
-                ],
-                answer: 0,
-                explanation: "O QR Code é um código que pode ser escaneado para acessar informações rapidamente."
-            },
-            {
-                question: "O que significa URL?",
-                options: [
-                    "O endereço de um site na internet.",
-                    "Um tipo de cabo para conectar dispositivos.",
-                    "Uma senha para desbloquear smartphones.",
-                    "Um software de edição de vídeos."
-                ],
-                answer: 0,
-                explanation: "A URL é o endereço que você digita no navegador para acessar um site."
-            }
+            { question: "O que é um navegador de internet?", options: ["Um programa para acessar sites.", "Um tipo de computador.", "Um antivírus.", "Um aplicativo de mensagens."], answer: 0, explanation: "O navegador é o programa usado para acessar sites na internet, como Chrome, Firefox e Edge." },
+            { question: "O que é um e-mail?", options: ["Uma mensagem eletrônica enviada pela internet.", "Um número de telefone.", "Um site de redes sociais.", "Um documento impresso."], answer: 0, explanation: "E-mail é uma forma de comunicação online usada para enviar e receber mensagens eletrônicas." },
+            { question: "O que significa Wi-Fi?", options: ["Uma tecnologia que permite conexão sem fio à internet.", "Um tipo de cabo de rede.", "Uma marca de celular.", "Um sistema de segurança para computadores."], answer: 0, explanation: "Wi-Fi é uma tecnologia que permite conectar dispositivos à internet sem a necessidade de cabos." },
+            { question: "O que é um aplicativo (app)?", options: ["Um programa que pode ser instalado em smartphones e computadores.", "Um site de notícias.", "Um tipo de conexão de internet.", "Um formato de vídeo."], answer: 0, explanation: "Aplicativos são programas desenvolvidos para realizar tarefas específicas, como WhatsApp e YouTube." },
+            { question: "O que é um smartphone?", options: ["Um celular com acesso à internet e aplicativos.", "Um telefone fixo.", "Um computador de mesa.", "Um modelo de televisão."], answer: 0, explanation: "Um smartphone é um telefone inteligente que permite acessar a internet, instalar aplicativos e realizar diversas funções." },
+            { question: "O que significa a sigla PDF?", options: ["Um formato de arquivo usado para documentos.", "Um site de compras online.", "Um aplicativo de redes sociais.", "Um antivírus."], answer: 0, explanation: "PDF é um formato de arquivo usado para armazenar documentos de forma segura e compatível com diversos dispositivos." },
+            { question: "Para que serve o Google?", options: ["Para pesquisar informações na internet.", "Para criar documentos de texto.", "Para editar vídeos.", "Para conectar dispositivos Bluetooth."], answer: 0, explanation: "O Google é um mecanismo de busca que ajuda a encontrar informações na internet." },
+            { question: "O que é um antivírus?", options: ["Um programa que protege o computador contra ameaças digitais.", "Um navegador de internet.", "Uma senha de segurança.", "Um tipo de conexão Wi-Fi."], answer: 0, explanation: "O antivírus é um software que protege dispositivos contra vírus e outras ameaças online." },
+            { question: "O que significa copiar e colar no computador?", options: ["Duplicar um texto ou arquivo e colocá-lo em outro local.", "Salvar um documento na nuvem.", "Criar um atalho na área de trabalho.", "Desligar o computador."], answer: 0, explanation: "Copiar e colar permite duplicar textos ou arquivos para facilitar a edição e organização de informações." },
+            { question: "O que é um backup?", options: ["Uma cópia de segurança de arquivos importantes.", "Um tipo de conexão de internet.", "Um aplicativo para tirar fotos.", "Uma nova rede social."], answer: 0, explanation: "Backup é uma cópia de segurança feita para evitar a perda de arquivos importantes em caso de falha do dispositivo." }
         ];
 
         let currentQuestionIndex = 0;
@@ -164,11 +119,7 @@
             const currentQuestion = questions[currentQuestionIndex];
             const resultElement = document.getElementById("result");
 
-            if (selectedIndex === currentQuestion.answer) {
-                resultElement.textContent = "Correto! " + currentQuestion.explanation;
-            } else {
-                resultElement.textContent = "Errado. " + currentQuestion.explanation;
-            }
+            resultElement.textContent = selectedIndex === currentQuestion.answer ? "Correto! " + currentQuestion.explanation : "Errado. " + currentQuestion.explanation;
         }
 
         function nextQuestion() {
